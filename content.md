@@ -668,22 +668,29 @@ iStaging
 
 # Let's try it out!
 
-<!-- .slide: data-background="media/img/aframe-rendered-full.png" -->
+Install `npm`:
+```
+npm install -g live-server
 
-Open a jsbin:
+```
+Use Mongoose on Ŵindows:
+https://cesanta.com/
 
-https://jsbin.com/
+Create a file called ` index.html `
+Open a terminal on the same folder and run:
+```
+live-server
 
-
+```
 
 <!-- NOTES -->
 notes...
 
 ---
 
-## Hello World
+## Create a scene
 
-<!-- .slide: data-background="media/img/aframe.jpg" data-transition="slide-in none" -->
+<!-- .slide: data-transition="slide-in fade-out" -->
 
 ```html
 <html>
@@ -708,9 +715,9 @@ notes...
 
 ---
 
-## Hello World
+## Add an entity with components
 
-<!-- .slide: data-background="media/img/aframe.jpg" data-transition="fade-in slide-out" -->
+<!-- .slide: data-transition="fade-in fade-out" -->
 
 ```html
 <html>
@@ -719,7 +726,11 @@ notes...
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box
+        position="-1 0.5 -3"
+        rotation="0 45 0"
+        color="#4CC3D9">
+      </a-box>
     </a-scene>
   </body>
 </html>
@@ -727,7 +738,60 @@ notes...
 <!-- .element: class="stretch" -->
 
 <!-- NOTES -->
-- Basic 3D primitives with Custom Elements
-- Readable: HTML arguably most accessible language in computing
-- Encapsulated: copy-and-paste HTML anywhere else and still work, no state or variables
-- Quickly look at a live example...
+
+---
+
+## Use the Inspector
+
+Build the scene working with one entity at a time.
+
+```
+// Win/Linux:
+<ctrl> + <alt> + i
+// Mac:
+<cmd> + <alt> + i
+
+```
+
+Copy the code from the inspector to your file.
+
+---
+
+## Your Turn!
+
+Build a street lamp using only primitives.
+
+Pro-tip: put all your entities inside another entity to make it easier to move, scale, rotate, etc.
+
+```html
+<a-entity position="0 0 -3" rotation="0 45 0">
+  <a-box
+    scale="0.1 5 0.1"
+    color="gray">
+  </a-box>
+  <a-box
+    scale="0.1 0.1 1.5"
+    position="0 2.5 0.75"
+    color="gray">
+  </a-box>
+  <a-box
+    scale="0.3 0.1 0.6"
+    position="0 2.42 1.3"
+    color="gray">
+  </a-box>
+  <a-sphere scale="0.1 0.1 0.2"
+    position="0 2.42 1.3"
+    color="yellow">
+  <a-sphere>
+<a-entity>
+
+```
+
+<div>
+  <!-- <img data-src="media/img/github.png"> -->
+  <!-- image of Di Caprio Inception -->
+  <i>180+ contributors 6000+ Stargazers</i>
+</div>
+
+
+Copy the code from the inspector to your file.
