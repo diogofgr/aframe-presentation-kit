@@ -137,11 +137,11 @@ https://webvr.rocks
 
 <div class="captioned-image-row small">
   <div>
-    <img data-src="media/img/firefox-nightly.png">
-    <i>Firefox Nightly</i>
+    <img data-src="media/img/firefox.png">
+    <i>Firefox</i>
   </div>
   <div>
-    <img data-src="media/img/edge.jpg">
+    <img data-src="media/img/edge.png">
     <i>Microsoft Edge</i>
   </div>
   <div>
@@ -152,7 +152,7 @@ https://webvr.rocks
 
 <div class="captioned-image-row small">
   <div>
-    <img data-src="media/img/chrome.jpg">
+    <img data-src="media/img/chrome.png">
     <i>Chrome for Android</i>
   </div>
   <div>
@@ -162,10 +162,6 @@ https://webvr.rocks
   <div>
     <img data-src="media/img/samsung-browser.png">
     <i>Samsung Internet</i>
-  </div>
-  <div>
-    <img data-src="media/img/google-cardboard.png">
-    <i>Mobile Polyfill</i>
   </div>
 </div>
 
@@ -187,6 +183,21 @@ https://webvr.rocks
 - Must be decentralized/open/connected, the Web is best platform to fully realize
 - Where do we begin?
 - three.js abstracts WebGL, 3D, and WebVR, but could still make it more accessible
+
+---
+
+<!-- .slide: data-background="media/img/metaverse.jpg" -->
+
+<div class="captioned-image-row big">
+  <div>
+    <img data-src="media/img/snowcrash.jpg">
+    <i>Snowcrash</i>
+  </div>
+  <div>
+    <img data-src="media/img/readyplayerone.jpg">
+    <i>Ready Player One</i>
+  </div>
+</div>
 
 ---
 
@@ -240,14 +251,18 @@ A web framework for building virtual reality experiences
 
 ```html
 <html>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <a-scene>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
 
 
 
 
 
-  </a-scene>
+    </a-scene>
+  </body>
 </html>
 ```
 <!-- .element: class="stretch" -->
@@ -268,14 +283,18 @@ A web framework for building virtual reality experiences
 
 ```html
 <html>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <a-scene>
-    <a-box color="#4CC3D9" position="-1 0.5 -3" rotation="0 45 0"></a-box>
-    <a-cylinder color="#FFC65D" position="1 0.75 -3" radius="0.5" height="1.5"></a-cylinder>
-    <a-sphere color="#EF2D5E" position="0 1.25 -5" radius="1.25"></a-sphere>
-    <a-plane color="#7BC8A4" position="0 0 -4" rotation="-90 0 0" width="4" height="4"></a-plane>
-    <a-sky color="#ECECEC"></a-sky>
-  </a-scene>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
 </html>
 ```
 <!-- .element: class="stretch" -->
@@ -346,7 +365,14 @@ A web framework for building virtual reality experiences
 
 # Entity-Component-System
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" -->
+<div class="captioned-image-row big">
+  <div>
+    <img data-src="media/img/entity-component-system.jpg">
+    <i>Image by Ruben Mueller from vrjump.de</i>
+  </div>
+</div>
+
+<!-- .slide: data-background="media/img/minecraft.png" -->
 
 <!-- NOTES -->
 - Is an entity-component framework
@@ -358,7 +384,7 @@ A web framework for building virtual reality experiences
 
 ---
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="slide-in none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="slide-in none" -->
 
 ## Composing an Entity
 
@@ -376,7 +402,7 @@ A web framework for building virtual reality experiences
 
 ## Composing an Entity
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="none" -->
 
 ```html
 <a-entity
@@ -394,7 +420,7 @@ A web framework for building virtual reality experiences
 
 ## Composing an Entity
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="none" -->
 
 ```html
 <a-entity
@@ -408,7 +434,7 @@ A web framework for building virtual reality experiences
 
 ## Composing an Entity
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="none" -->
 
 ```html
 <a-entity
@@ -424,7 +450,7 @@ A web framework for building virtual reality experiences
 
 ## Composing an Entity
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="none" -->
 
 ```html
 <a-entity
@@ -439,7 +465,7 @@ A web framework for building virtual reality experiences
 
 ## Composing an Entity
 
-<!-- .slide: data-background="media/img/minecraft-blocks.png" data-transition="none" -->
+<!-- .slide: data-background="media/img/minecraft.png" data-transition="none" -->
 
 ```html
 <a-entity
@@ -637,3 +663,71 @@ iStaging
 - Most work done on GitHub
 - Active community on Slack to share projects, interact, hang out, seek help
 - Featured projects on the `awesome-aframe` repository and *A Week of A-Frame* blog
+
+------
+
+# Let's try it out!
+
+<!-- .slide: data-background="media/img/aframe-rendered-full.png" -->
+
+Open a jsbin:
+
+https://jsbin.com/
+
+
+
+<!-- NOTES -->
+notes...
+
+---
+
+## Hello World
+
+<!-- .slide: data-background="media/img/aframe.jpg" data-transition="slide-in none" -->
+
+```html
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+
+
+
+
+    </a-scene>
+  </body>
+</html>
+```
+<!-- .element: class="stretch" -->
+
+<!-- NOTES -->
+notes...
+
+---
+
+## Hello World
+
+<!-- .slide: data-background="media/img/aframe.jpg" data-transition="fade-in slide-out" -->
+
+```html
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+    </a-scene>
+  </body>
+</html>
+```
+<!-- .element: class="stretch" -->
+
+<!-- NOTES -->
+- Basic 3D primitives with Custom Elements
+- Readable: HTML arguably most accessible language in computing
+- Encapsulated: copy-and-paste HTML anywhere else and still work, no state or variables
+- Quickly look at a live example...
