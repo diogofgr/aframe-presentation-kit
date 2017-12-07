@@ -3,9 +3,10 @@
   <head>
     <title>Workshop Scene</title>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene rain="splash: false; count: 65; width: 10; dropRadius: 0.002; dropHeight: 0.5" fog="type: exponential; color: #141414 ; density: 0.1">
 
       <a-assets>
         <img id="ground" src="media/img/ground.jpg">
@@ -47,13 +48,14 @@
 
       <!-- floor -->
       <a-entity
-        geometry="primitive: plane; width: 40; height: 40"
+        geometry="primitive: plane; width: 80; height: 80"
         rotation="-90 0 0"
-        material="src: #ground; repeat: 14 14; roughness: 0.6; metalness: 0.7"
+        material="src: #ground; repeat: 28 28; roughness: 0.6; metalness: 0.7"
         shadow="receive: true"
         >
       </a-entity>
 
+      <!-- car -->
       <a-entity
         obj-model="obj: #car-obj; mtl: #car-mtl"
         scale="0.06 0.06 0.06"
@@ -62,13 +64,14 @@
         shadow="receive: true">
       </a-entity>
 
-      <a-sky src="#sky" material="shader: standard"></a-sky>
+      <!-- skybox -->
+      <a-sky src="#sky" material="shader: standard; fog: false"></a-sky>
 
-      <!-- moonlight -->
+      <!-- moon and moonlight -->
       <a-entity
-        light="castShadow:true;shadowMapHeight:800;shadowMapWidth:800;shadowCameraLeft:0;shadowCameraRight:8.57;intensity:0.19; angle: 80; type:spot"
-        position="-15 10 5"
-        rotation="-36.54 -76.9 0">
+        light="castShadow:true;shadowMapHeight:800;shadowMapWidth:800;shadowCameraLeft:0;shadowCameraRight:8.57;intensity:0.19; angle: 100; type:spot"
+        rotation="-36.54 -76.9 0"
+        position="-150 140 40">
       </a-entity>
 
       <a-entity light="type: ambient; intensity: 0.2"></a-entity>

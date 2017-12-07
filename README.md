@@ -192,9 +192,18 @@ Are there any shadows? Do they look right? Read more about shadows here: https:/
 ```
 Tip: **use the inspector** to work with the shadow properties of each entity.
 
-
-2. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
+3. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
 
 ## Add fog and rain
 
-(TODO)
+1. Apply fog to <a-scene>.
+Go easy on the fog to help you *mask* the horizon whyle keeping the sky visible; Or go crazy and make a super creepy scene.
+Play with color and type to achieve the look you want.
+https://aframe.io/docs/0.7.0/components/fog.html
+
+2. Add rain to the scene. Check out how it works here:
+https://github.com/takahirox/aframe-rain
+
+
+
+
