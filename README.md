@@ -52,7 +52,7 @@ In this case ` position ` and ` rotation ` are the *components* of the ` <a-box>
 ## Build a Street Lamp
 
 Build a simple street lamp using only primitives (box, cylinder, sphere, etc).
-Pro-tip: put all your entities inside another entity to make it easier to move, scale, and rotate once your finished with the desing.
+Pro-tip: put all your entities inside another entity to make it easier to move, scale, and rotate once you're finished with the design.
 
 ```
 <a-entity position="0 0 -3" rotation="0 45 0">
@@ -79,21 +79,64 @@ Pro-tip: put all your entities inside another entity to make it easier to move, 
 
 ## Deploy your scene
 
-(TODO)
+1. Create a repository on Github, push your local repository and set the *main* branch to be hosted.
+2. Push your code to that repository:
+```
+git add .
+git commit -m "my commit message"
+git push origin master
+```
+The **commit message** should contain what you've done since the last commit. This is the first commit so it's common to put **"start repo"**.
+Go look at your page, see if everything looks fine.
+Now you can continue working on our scene, knowing that everything is looking the way it should.
 
 ## Add textures
 
-(TODO)
+1. Find an image like this one:
+http://texturelib.com/Textures/brick/pavement/brick_pavement_0099_02_preview.jpg
+Tip: **get a square image** - it's easier to work with.
+2. Save it with a simpler name like `ground.jpg` on the same folder as your project
+3. Import it as an asset (all images, 3d models and sounds should be imported like this):
+```
+(TODO) asset.. etc
+```
+4. Create a plane for the ground. Make it 40x40 or more. Add the texture that you imported earlier like this:
+```
+(TODO) plane with texture.
+```
 
 ## Add 3d models
 
-(TODO)
+As you've seen with the street lamp earlier, using primitives can make the code quite lengthy even for simple designs.
+Imagine doing a house or a car... you'd have hundreds or thousands of lines of code.
+Fortunaely you can import 3d models from other software like Blender, 3dsmax, etc.
+1. Find a model that you like on https://poly.google.com/ and import it:
+
+```
+(TODO) import model and put it in an entity.
+```
+
+2. Adjust the scale until it looks right.
 
 ## Add a skybox
+
 
 (TODO)
 
 ## Add some lights
 
+Getting the lights and shadows right is one of the hardest things to do in A-frame.
+
+1. Add a directional light with low intensity to make it look like it's night time.
+
+2. Add a spot light to the street lamp. Play around with the the angle, color and penumbra until you find something you like. **Use the inspector!**
+
+3. Are there any shadows? Do the look right? Read more about shadows here: https://aframe.io/docs/0.7.0/components/shadow.html
+Tip: **use the inspector** to work with the shadow properties of your spot light.
 (TODO)
 
+4. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
+
+## Add fog and rain
+
+(TODO)
