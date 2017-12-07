@@ -87,7 +87,9 @@ git commit -m "my commit message"
 git push origin master
 ```
 The **commit message** should contain what you've done since the last commit. This is the first commit so it's common to put **"start repo"**.
-Go look at your page, see if everything looks fine.
+
+***Go look at your webpage***, see if everything looks fine.
+
 Now you can continue working on our scene, knowing that everything is looking the way it should.
 
 ## Add textures
@@ -98,44 +100,100 @@ Tip: **get a square image** - it's easier to work with.
 2. Save it with a simpler name like `ground.jpg` on the same folder as your project
 3. Import it as an asset (all images, 3d models and sounds should be imported like this):
 ```
-(TODO) asset.. etc
+<a-assets>
+  <img id="ground" src="media/img/ground.jpg">
+</a-assets>
 ```
-4. Create a plane for the ground. Make it 40x40 or more. Add the texture that you imported earlier like this:
-```
-(TODO) plane with texture.
-```
+When you need to use these assets you just need to refer to them by their *id*.
 
-## Add 3d models
+4. Create a plane for the ground. Make it 40x40 or more. Add the texture like this:
+```
+<a-plane src="#ground"></a-plane>
+```
+Notice we refer to it by doing *#id*.
+
+## Add a 3d model
 
 As you've seen with the street lamp earlier, using primitives can make the code quite lengthy even for simple designs.
 Imagine doing a house or a car... you'd have hundreds or thousands of lines of code.
-Fortunaely you can import 3d models from other software like Blender, 3dsmax, etc.
-1. Find a model that you like on https://poly.google.com/ and import it:
+Fortunaely you can import 3d models made with software like Blender, 3dsmax, etc.
+
+1. Find a model that you like on https://poly.google.com/
+Look for the models that are downloadable, preferably in OBJ format.
+You should get a *.zip* with two files: model-xpto*.obj* and model-xpto*.mtl*
+
+2. Import the files into <a-assets> and put them in an <a-entity>:
 
 ```
-(TODO) import model and put it in an entity.
+<a-asset-item id="tree-obj" src="/path/to/tree.obj"></a-asset-item>
+<a-asset-item id="tree-mtl" src="/path/to/tree.mtl"></a-asset-item>
 ```
 
-2. Adjust the scale until it looks right.
+```
+<a-entity
+  obj-model="obj: #car-obj; mtl: #car-mtl">
+</a-entity>
+```
+
+3. Adjust the scale until it looks right.
 
 ## Add a skybox
 
+1. Look for *equirectangular* pictures like this one:
+https://www.google.pt/search?client=ubuntu&hs=9Y1&channel=fs&dcr=0&tbm=isch&q=equirectangular&spell=1&sa=X&ved=0ahUKEwjVsL-3pvjXAhVK5xoKHQnsBxkQvwUImQEoAA&biw=1708&bih=835&dpr=0.8#imgrc=nJ7brK9YVhC_eM
 
-(TODO)
+2. Import it just like you did with the *ground* texture:
+```
+<a-assets>
+  <img id="sky" src="sky.png">
+</a-assets>
+```
 
-## Add some lights
+```
+<a-sky src="#sky"></a-sky>
+```
 
-Getting the lights and shadows right is one of the hardest things to do in A-frame.
+##Lights
 
-1. Add a directional light with low intensity to make it look like it's night time.
+Getting the lights and shadows right is one of the hardest things to do in A-frame. It is also one of the most important things to add depth to a scene.
 
-2. Add a spot light to the street lamp. Play around with the the angle, color and penumbra until you find something you like. **Use the inspector!**
+1. Add an *ambient* light with low intensity to make it look like it's night time.
 
-3. Are there any shadows? Do the look right? Read more about shadows here: https://aframe.io/docs/0.7.0/components/shadow.html
-Tip: **use the inspector** to work with the shadow properties of your spot light.
-(TODO)
+**Note**: by default the skybox is not affected by the lighting in your scene. To change that you must change the material:
+```
+<a-sky
+  src="#sky"
+  material="shader: standard">
+</a-sky>
+```
 
-4. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
+2. Add a spot light to the street lamp:
+```
+ <a-entity light="type:spot"></a-entity>
+```
+
+Play around with the rotation, angle, color and penumbra until you find something you like. **Use the inspector!**
+
+## Shadows
+
+Are there any shadows? Do they look right? Read more about shadows here: https://aframe.io/docs/0.7.0/components/shadow.html
+
+1. Add `castShadow: true` to the spotlight:
+```
+<a-entity light="type:spot; castShadow: true"></a-entity>
+```
+
+2. Add the `shadow` component to the objects that receive and cast shadows:
+```
+<a-entity
+  obj-model="obj: #car-obj; mtl: #car-mtl"
+  shadow="receive: true">
+</a-entity>
+```
+Tip: **use the inspector** to work with the shadow properties of each entity.
+
+
+2. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
 
 ## Add fog and rain
 
