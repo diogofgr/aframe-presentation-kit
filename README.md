@@ -20,7 +20,7 @@ https://cesanta.com/
 
 You should only have one ` <a-scene> ` inside each html document.
 
-```
+```html
 <html>
   <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
