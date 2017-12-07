@@ -200,15 +200,13 @@ git push origin master
 ```
 See if the floor, skybox and 3d model are loaded correctly.
 
-## Add fog and rain
+## Add fog
 
 1. Apply fog to <a-scene>.
 Go easy on the fog to help you *mask* the horizon whyle keeping the sky visible; Or go crazy and make a super creepy scene.
 Play with color and type to achieve the look you want.
 https://aframe.io/docs/0.7.0/components/fog.html
 
-2. Add rain to the scene. Check out how it works here:
-https://github.com/takahirox/aframe-rain
 
 
 
