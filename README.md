@@ -18,10 +18,9 @@ https://cesanta.com/
 
 ## Create a Scene
 
-You can only have one ` <a-scene> ` inside each html document. 
+You should only have one ` <a-scene> ` inside each html document.
 
 ```
-
 <html>
   <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
@@ -36,19 +35,15 @@ You can only have one ` <a-scene> ` inside each html document.
     </a-scene>
   </body>
 </html>
-
-
 ```
 
 ## Add an entity with components to your scene
 
 ```
-
 <a-box
   position="-1 0.5 -3"
   rotation="0 45 0">
 </a-box>
-
 ```
 
 In this case ` position ` and ` rotation ` are the *components* of the ` <a-box> ` *entity*.
