@@ -39,7 +39,7 @@ You should only have one ` <a-scene> ` inside each html document.
 
 ## Add an entity with components to your scene
 
-```
+```html
 <a-box
   position="-1 0.5 -3"
   rotation="0 45 0">
@@ -54,7 +54,7 @@ In this case ` position ` and ` rotation ` are the *components* of the ` <a-box>
 Build a simple street lamp using only primitives (box, cylinder, sphere, etc).
 Pro-tip: put all your entities inside another entity to make it easier to move, scale, and rotate once you're finished with the design.
 
-```
+```html
 <a-entity position="0 0 -3" rotation="0 45 0">
   <a-box
     scale="0.1 5 0.1"
@@ -99,7 +99,7 @@ http://texturelib.com/Textures/brick/pavement/brick_pavement_0099_02_preview.jpg
 Tip: **get a square image** - it's easier to work with.
 2. Save it with a simpler name like `ground.jpg` on the same folder as your project
 3. Import it as an asset (all images, 3d models and sounds should be imported like this):
-```
+```html
 <a-assets>
   <img id="ground" src="media/img/ground.jpg">
 </a-assets>
@@ -107,7 +107,7 @@ Tip: **get a square image** - it's easier to work with.
 When you need to use these assets you just need to refer to them by their *id*.
 
 4. Create a plane for the ground. Make it 40x40 or more. Add the texture like this:
-```
+```html
 <a-plane src="#ground"></a-plane>
 ```
 Notice we refer to it by doing *#id*.
@@ -124,12 +124,12 @@ You should get a *.zip* with two files: model-xpto*.obj* and model-xpto*.mtl*
 
 2. Import the files into <a-assets> and put them in an <a-entity>:
 
-```
+```html
 <a-asset-item id="tree-obj" src="/path/to/tree.obj"></a-asset-item>
 <a-asset-item id="tree-mtl" src="/path/to/tree.mtl"></a-asset-item>
 ```
 
-```
+```html
 <a-entity
   obj-model="obj: #car-obj; mtl: #car-mtl">
 </a-entity>
@@ -143,7 +143,7 @@ You should get a *.zip* with two files: model-xpto*.obj* and model-xpto*.mtl*
 https://www.google.pt/search?client=ubuntu&hs=9Y1&channel=fs&dcr=0&tbm=isch&q=equirectangular&spell=1&sa=X&ved=0ahUKEwjVsL-3pvjXAhVK5xoKHQnsBxkQvwUImQEoAA&biw=1708&bih=835&dpr=0.8#imgrc=nJ7brK9YVhC_eM
 
 2. Import it just like you did with the *ground* texture:
-```
+```html
 <a-assets>
   <img id="sky" src="sky.png">
 </a-assets>
@@ -160,7 +160,7 @@ Getting the lights and shadows right is one of the hardest things to do in A-fra
 1. Add an *ambient* light with low intensity to make it look like it's night time.
 
 **Note**: by default the skybox is not affected by the lighting in your scene. To change that you must change the material:
-```
+```html
 <a-sky
   src="#sky"
   material="shader: standard">
@@ -168,7 +168,7 @@ Getting the lights and shadows right is one of the hardest things to do in A-fra
 ```
 
 2. Add a spot light to the street lamp:
-```
+```html
  <a-entity light="type:spot"></a-entity>
 ```
 
@@ -179,12 +179,12 @@ Play around with the rotation, angle, color and penumbra until you find somethin
 Are there any shadows? Do they look right? Read more about shadows here: https://aframe.io/docs/0.7.0/components/shadow.html
 
 1. Add `castShadow: true` to the spotlight:
-```
+```html
 <a-entity light="type:spot; castShadow: true"></a-entity>
 ```
 
 2. Add the `shadow` component to the objects that receive and cast shadows:
-```
+```html
 <a-entity
   obj-model="obj: #car-obj; mtl: #car-mtl"
   shadow="receive: true">
@@ -192,7 +192,13 @@ Are there any shadows? Do they look right? Read more about shadows here: https:/
 ```
 Tip: **use the inspector** to work with the shadow properties of each entity.
 
-3. Deploy your scene again and see if the floor, skybox and 3d model are loaded correctly.
+3. Deploy your scene again:
+```
+git add .
+git commit -m "Add lights and shadows"
+git push origin master
+```
+See if the floor, skybox and 3d model are loaded correctly.
 
 ## Add fog and rain
 
