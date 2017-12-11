@@ -61,11 +61,19 @@
 
       <!-- car -->
       <a-entity
-        obj-model="obj: #car-obj; mtl: #car-mtl"
+        obj-model="mtl:models/car.mtl;obj:models/car.obj"
         scale="0.06 0.06 0.06"
         position="0 0.1 -6"
         rotation="0 20 0"
         shadow="receive: true">
+        <a-animation
+          attribute="position"
+          from="-1.595 0.1 -14.945"
+          to="7.308 0.1 13.411"
+          dur="8000"
+          repeat="indefinite"
+          easing="linear">
+        </a-animation>
       </a-entity>
 
       <!-- skybox -->

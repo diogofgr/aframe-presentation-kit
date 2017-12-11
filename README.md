@@ -8,7 +8,7 @@ Here you'll learn how to build a VR scene using A-frame. For this workshop basic
 Slides for this workshop are here:
 https://docs.google.com/presentation/d/1ECOqC97oNoapnDNFsTYWpEZgUCt2PDmUzeLRJ3mjgZQ/edit?usp=sharing
 
-## Setting Things Up
+## 0. Setting Things Up
 1. Install Git
 2. Install Sublime Text 3 or other text editor
 3. (Mac/Linux) Install ` node `
@@ -19,7 +19,7 @@ npm install -g live-server
 5. (Windows) Use Mongoose to create a local server:
 https://cesanta.com/
 
-## Create a Scene
+## 1. Create a Scene
 
 This is the simplest way of starting an aframe scene. Just copy this boilerplate code:
 
@@ -41,7 +41,7 @@ This is the simplest way of starting an aframe scene. Just copy this boilerplate
 ```
 note: You should only have one ` <a-scene> ` inside each html document. This is where you put all the A-frame code.
 
-## Add an entity with components to your scene
+## 2. Add an entity with components to your scene
 
 Start by adding a cube:
 
@@ -51,7 +51,7 @@ Start by adding a cube:
 ```
 Check your browser. Where is the cube?
 
-Put it in front of the camera by adding a `posiiton` component and changing its coordinates:
+Put it in front of the camera by adding a `position` component and changing its coordinates:
 
 ```html
 <a-box
@@ -63,7 +63,7 @@ A-frame uses a right-hand coordinate system with the z-axis coming out of the sc
 
 **Challenge:** add color, rotation and scale to change how the cube looks. The color component works with hex colors and with css-like colors - gray, white, red, etc.
 
-## Build a Street Lamp
+## 3. Build a Street Lamp
 
 **Challenge:** - Build a simple street lamp using only primitives (box, cylinder, sphere, etc).
 Pro-tip: put all your entities inside another entity to make it easier to move, scale, and rotate once you're finished with the design.
@@ -91,7 +91,7 @@ Pro-tip: put all your entities inside another entity to make it easier to move, 
 <a-entity>
 ```
 
-## Deploy your scene
+## 4. Deploy your scene
 
 1. Create a repository on Github, push your local repository and set the *main* branch to be hosted.
 2. Push your code to that repository:
@@ -106,7 +106,7 @@ The **commit message** should contain what you've done since the last commit. Th
 
 Now you can continue working on our scene, knowing that everything is looking the way it should.
 
-## Add textures
+## 5. Add textures
 
 1. Find an image like this one:
 http://texturelib.com/Textures/brick/pavement/brick_pavement_0099_02_preview.jpg
@@ -126,7 +126,7 @@ When you need to use these assets you just need to refer to them by their *id*.
 ```
 Notice we refer to it by doing *#id*.
 
-## Add a 3d model
+## 6. Add a 3d model
 
 As you've seen with the street lamp earlier, using primitives can make the code quite lengthy even for simple designs.
 Imagine doing a house or a car... you'd have hundreds or thousands of lines of code.
@@ -151,7 +151,9 @@ You should get a *.zip* with two files: model-xpto*.obj* and model-xpto*.mtl*
 
 3. Adjust the scale until it looks right.
 
-## Add a skybox
+**Optional Challenge**: Make the car drive from left to right of the screen using <a-animation>. https://aframe.io/docs/0.7.0/core/animations.html
+
+## 7. Add a skybox
 
 1. Look for *equirectangular* pictures like this one:
 https://www.google.pt/search?client=ubuntu&hs=9Y1&channel=fs&dcr=0&tbm=isch&q=equirectangular&spell=1&sa=X&ved=0ahUKEwjVsL-3pvjXAhVK5xoKHQnsBxkQvwUImQEoAA&biw=1708&bih=835&dpr=0.8#imgrc=nJ7brK9YVhC_eM
@@ -167,7 +169,7 @@ https://www.google.pt/search?client=ubuntu&hs=9Y1&channel=fs&dcr=0&tbm=isch&q=eq
 <a-sky src="#sky"></a-sky>
 ```
 
-##Lights
+## 8. Lights
 
 Getting the lights and shadows right is one of the hardest things to do in A-frame. It is also one of the most important things to add depth to a scene.
 
@@ -188,7 +190,7 @@ Getting the lights and shadows right is one of the hardest things to do in A-fra
 
 Play around with the rotation, angle, color and penumbra until you find something you like. **Use the inspector!**
 
-## Shadows
+## 9. Shadows
 
 Are there any shadows? Do they look right? Read more about shadows here: https://aframe.io/docs/0.7.0/components/shadow.html
 
@@ -214,16 +216,12 @@ git push origin master
 ```
 See if the floor, skybox and 3d model are loaded correctly.
 
-## Add fog
+## 10. Add fog
 
 1. Apply fog to <a-scene>.
 Go easy on the fog to help you *mask* the horizon whyle keeping the sky visible; Or go crazy and make a super creepy scene.
 Play with color and type to achieve the look you want.
 https://aframe.io/docs/0.7.0/components/fog.html
-
-## Add an animation
-
-...
 
 
 
