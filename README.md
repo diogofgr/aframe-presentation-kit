@@ -1,24 +1,27 @@
 # A-frame Workshop for Beginners
 
-Adapted from the "Official starter slides for giving talks and presentations about A-Frame".
+Based on the "Official starter slides for giving talks and presentations about A-Frame".
 https://github.com/aframevr/aframe-presentation-kit
 
 Here you'll learn how to build a VR scene using A-frame. For this workshop basic understanding of html is recommended but not required.
 
+Slides for this workshop are here:
+https://docs.google.com/presentation/d/1ECOqC97oNoapnDNFsTYWpEZgUCt2PDmUzeLRJ3mjgZQ/edit?usp=sharing
+
 ## Setting Things Up
 1. Install Git
 2. Install Sublime Text 3 or other text editor
-3. Install ` node ` and ` npm `
-4. Install ` live-server ` or any other server
+3. (Mac/Linux) Install ` node `
+4. (Mac/Linux) Install ` live-server `
 ```
 npm install -g live-server
 ```
-note: On Windows you can use Mongoose
+5. (Windows) Use Mongoose to create a local server:
 https://cesanta.com/
 
 ## Create a Scene
 
-You should only have one ` <a-scene> ` inside each html document.
+This is the simplest way of starting an aframe scene. Just copy this boilerplate code:
 
 ```html
 <html>
@@ -36,22 +39,33 @@ You should only have one ` <a-scene> ` inside each html document.
   </body>
 </html>
 ```
+note: You should only have one ` <a-scene> ` inside each html document. This is where you put all the A-frame code.
 
 ## Add an entity with components to your scene
 
+Start by adding a cube:
+
 ```html
-<a-box
-  position="-1 0.5 -3"
-  rotation="0 45 0">
+<a-box>
 </a-box>
 ```
+Check your browser. Where is the cube?
 
-In this case ` position ` and ` rotation ` are the *components* of the ` <a-box> ` *entity*.
-**Challenge:** add two more components to this entity.
+Put it in front of the camera by adding a `posiiton` component and changing its coordinates:
+
+```html
+<a-box
+  position="0 0 0">
+</a-box>
+```
+A-frame uses a right-hand coordinate system with the z-axis coming out of the screen like this:
+![Right hand coordinate system](media/img/coordinates.jpg)
+
+**Challenge:** add color, rotation and scale to change how the cube looks. The color component works with hex colors and with css-like colors - gray, white, red, etc.
 
 ## Build a Street Lamp
 
-Build a simple street lamp using only primitives (box, cylinder, sphere, etc).
+**Challenge:** - Build a simple street lamp using only primitives (box, cylinder, sphere, etc).
 Pro-tip: put all your entities inside another entity to make it easier to move, scale, and rotate once you're finished with the design.
 
 ```html
@@ -88,7 +102,7 @@ git push origin master
 ```
 The **commit message** should contain what you've done since the last commit. This is the first commit so it's common to put **"start repo"**.
 
-***Go look at your webpage***, see if everything looks fine.
+***Go look at your webpage***, see if everything looks fine - use a VR headset if you have one!
 
 Now you can continue working on our scene, knowing that everything is looking the way it should.
 
@@ -206,6 +220,10 @@ See if the floor, skybox and 3d model are loaded correctly.
 Go easy on the fog to help you *mask* the horizon whyle keeping the sky visible; Or go crazy and make a super creepy scene.
 Play with color and type to achieve the look you want.
 https://aframe.io/docs/0.7.0/components/fog.html
+
+## Add an animation
+
+...
 
 
 
