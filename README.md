@@ -1,12 +1,12 @@
 # A-frame Workshop for Beginners
 
-Based on the "Official starter slides for giving talks and presentations about A-Frame".
-https://github.com/aframevr/aframe-presentation-kit
+Based on the ["Official starter slides for giving talks and presentations about A-Frame".](https://github.com/aframevr/aframe-presentation-kit)
 
 Here you'll learn how to build a VR scene using A-frame. For this workshop basic understanding of html is recommended but not required.
 
-Slides for this workshop are here:
-https://docs.google.com/presentation/d/1ECOqC97oNoapnDNFsTYWpEZgUCt2PDmUzeLRJ3mjgZQ/edit?usp=sharing
+Slides for this workshop are [here.](https://docs.google.com/presentation/d/1ECOqC97oNoapnDNFsTYWpEZgUCt2PDmUzeLRJ3mjgZQ/edit?usp=sharing)
+
+Take [this scene](https://diogofgr.github.io/aframe-presentation-kit/) as reference and try to build something similar. If you need to look at my code it's above in `index.html`.
 
 ## 0. Setting Things Up
 1. Install Git
