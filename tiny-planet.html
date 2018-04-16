@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="ground" src="/media/img/ground.jpg">
+        <img id="sky" src="/media/img/sky.jpg">
+        <a-asset-item id="car-obj" src="models/car.obj"></a-asset-item>
+        <a-asset-item id="car-mtl" src="models/car.mtl"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="3 52.411 8" rotation="0 20 0"></a-camera>
+
+      <!-- car -->
+      <a-entity 
+        id="car"
+        position="0 50 0"
+        obj-model="obj: models/car.obj; mtl: models/car.mtl"
+        scale="0.06 0.06 0.06"
+        >
+      </a-entity>
+
+      <a-obj-model src="models/car.obj" mtl="models/car.mtl"></a-obj-model>
+
+      <!-- world -->
+      <a-entity>
+        <!-- street light 1-->
+        <a-entity position="-2.732 49.794 0" rotation="0 0 5.6000000000000005">
+          <a-box color="gray" position="0 3 0" scale="0.2 6 0.2" material="" geometry="">
+          </a-box>
+          <a-box color="gray" position="1 6 0" scale="2.2 0.2 0.2" material="" geometry="">
+          </a-box>
+          <a-box color="gray" position="1.773 5.838 0" scale="1.1 0.22999999999999998 0.5899999999999999" material="" geometry="">
+          </a-box>
+          <a-sphere position="1.808 5.753 0" scale="0.42 0.10000000000000003 0.24000000000000005" material="color:#fff45a" geometry=""></a-sphere>
+        </a-entity>
+
+        <!-- street light 2-->
+        <a-entity position="-2.732 -49.794 0" rotation="180 0 5.6000000000000005">
+          <a-box color="gray" position="0 3 0" scale="0.2 6 0.2" material="" geometry="">
+          </a-box>
+          <a-box color="gray" position="1 6 0" scale="2.2 0.2 0.2" material="" geometry="">
+          </a-box>
+          <a-box color="gray" position="1.773 5.838 0" scale="1.1 0.22999999999999998 0.5899999999999999" material="" geometry="">
+          </a-box>
+          <a-sphere position="1.808 5.753 0" scale="0.42 0.10000000000000003 0.24000000000000005" material="color:#fff45a" geometry=""></a-sphere>
+        </a-entity>
+
+        <a-sphere position="0 0 0" scale="50 50 50" material="color:#fff45a"></a-sphere>
+        <a-cylinder position="0 0 0" scale="50 5 50" rotation="0 0 90" material="src: #ground; repeat: 60 1; color:#666"></a-cylinder>
+        <a-animation 
+          attribute="rotation"
+          dur="10000"
+          fill="forwards"
+          to="360 0 0"
+          repeat="indefinite"
+          easing="linear"
+          >
+           
+        </a-animation>
+      </a-entity>
+
+      <!-- sky -->
+      <a-sky src="#sky" material="shader: standard; fog: false"></a-sky>
+
+
+    </a-scene>
+  </body>
+</html>
