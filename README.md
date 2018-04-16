@@ -26,7 +26,7 @@ This is the simplest way of starting an aframe scene. Just copy this boilerplate
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
